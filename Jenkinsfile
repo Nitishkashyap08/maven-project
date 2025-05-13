@@ -58,7 +58,7 @@ stages{
         success {
              dir("webapp/target/")
             {
-            stash name: "maven-build", includes: "*.war"
+            stash name: "maven-build", includes: "*.jar"
                  }
                  }
             }
@@ -99,7 +99,7 @@ stages{
             }
             sh """
             cd /var/www/html/
-            jar -xvf webapp.war
+            jar -xvf webapp.jar
             """
         }  
     }
